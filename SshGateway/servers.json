@@ -1,0 +1,18 @@
+﻿[
+  {
+    "host": "ssh-gateway",
+    "user": "root",
+    "port": 22,
+    "username": "user",
+    "pathToKey": "/path/to/private/key",
+    "name": "SSH Gateway"
+  },
+  {
+    "host": "ssh-gateway-2",
+    "user": "user3",
+    "port": 2222,
+    "username": "user2",
+    "pathToKey": "/path/to/private/key2",
+    "name": "SSH Gateway 2"
+  }
+]
