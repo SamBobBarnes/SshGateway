@@ -64,13 +64,13 @@ class Program
         else
         {
             Console.WriteLine("Invalid choice.");
-            Process.Start("exit");
         }
 
     }
 
     private static void Ssh(string sshExecutable, string[]? args = null)
     {
+        Console.WriteLine($"Executing: {sshExecutable} {string.Join(" ", args ?? [])}");
         var proc = Process.Start(sshExecutable, args ?? []);
         proc.WaitForExit();
     }
