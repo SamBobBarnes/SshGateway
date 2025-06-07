@@ -7,7 +7,7 @@ jobs:
   bulid:
     strategy:
         matrix:
-            os: [linux-x64, mac-arm64, win-x64]
+            os: [linux-x64, osx-arm64, win-x64]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
