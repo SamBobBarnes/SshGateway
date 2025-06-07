@@ -1,0 +1,27 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  bulid:
+    strategy:
+        matrix:
+            os: [linux-x64, mac-arm64, win-x64]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Build
+        run: "dotnet publish -c Release -o ./publish -r: ${{ matrix.os }}"
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          path: './publish'
+          name: '${{ matrix.os }}-binary'
